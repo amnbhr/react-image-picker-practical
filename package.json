@@ -1,5 +1,5 @@
 {
-  "name": "react-image-picker-practical",
+  "name": "@amnbhr/react-image-picker-practical",
   "version": "1.0.0",
   "description": "We want to get rid of a lot of repetitive tasks",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/amnbhr2/react-image-picker-practical.git"
+    "url": "git+https://github.com/amnbhr/react-image-picker-practical.git"
   },
   "keywords": [
     "react",
@@ -18,9 +18,9 @@
   "author": "amin bahari",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/amnbhr2/react-image-picker-practical/issues"
+    "url": "https://github.com/amnbhr/react-image-picker-practical/issues"
   },
-  "homepage": "https://gitlab.com/amnbhr2/react-image-picker-practical#readme",
+  "homepage": "https://github.com/amnbhr/react-image-picker-practical#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
@@ -37,5 +37,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/amnbhr"
+  }
 }

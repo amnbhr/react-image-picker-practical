@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 
 import './ImagePicker.css';
 
@@ -8,22 +8,50 @@ interface ImagePickerProps {
 
 const ImagePicker = (props: ImagePickerProps) => {
     const {title} = props;
+    const inputRef = useRef();
+    const [selectedImage, setSelectedImage] = useState()
 
     return (
-        <div className="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <div className='uploader'>
-                <span>
-                    {title}
-                </span>
+        <div className='uploader' onClick={() => {
+            if (!selectedImage) {
+                inputRef.current.click()
+            }
+        }}>
+            <span onClick={() => {
+                if (selectedImage) {
+                    setSelectedImage(null)
+                }
+            }}>
+                {selectedImage ? 'Remove' : title}
+            </span>
 
-                <input
-                    type="file"
-                    accept="image/png, image/jpeg"
-                    onChange={(event) => console.log(event)}
-                />
-            </div>
+            {selectedImage && (
+                <img className={'uploader'} src={selectedImage.url}/>
+            )}
+
+            <input
+                ref={inputRef}
+                type="file"
+                accept="image/png, image/jpeg"
+                onChange={onImageSelect}
+            />
         </div>
     )
+
+    function onImageSelect(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        const img = new Image();
+
+        reader.readAsDataURL(file);
+        reader.onload = (_event) => {
+
+            setSelectedImage({
+                file,
+                url: reader.result
+            })
+        }
+    }
 }
 
 export default ImagePicker;

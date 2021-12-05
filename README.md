@@ -16,6 +16,7 @@ The image picker is used for selecting single or multiple images from files.
 npm install @amnbhr/react-image-picker-practical@1.0.0
 ```
 
+## Example
 ```javascript
 //ES6
 import React from 'react'

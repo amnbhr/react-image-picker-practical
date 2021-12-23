@@ -7,8 +7,8 @@ The image picker is used for selecting single or multiple images from files.
 ## Features
 - jQuery Free
 - Include TypeScript
-- Tested
-- Single or multiple images selection
+- Tested with jest
+- It has storybook
 - Other things (...in progress)
 
 ## Installation
